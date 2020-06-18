@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>URL</key>
+	<string>https://mcbeeringi.github.io/apps/webgl/fsh.html#%7B%22fsh%22%3A%22precision%20mediump%20float%3B%5Cnuniform%20float%20time%3B%5Cnuniform%20vec2%20res%3B%5Cnuniform%20sampler2D%20tex0%3B%5Cnuniform%20sampler2D%20tex1%3B%5Cnvoid%20main%28%29%7B%5Cn%5Ctvec2%20p%20%3D%20gl_FragCoord.xy%2Fres%3B%5Cn%5Ctvec3%20diffuse%20%3D%20texture2D%28tex0%2Cp%29.rgb*.5%2B.48%3B%5Cn%5Ctdiffuse%20%3D%20mix%28diffuse%2C%5Cn%5Ct%5Ct%28texture2D%28tex1%2Cp%29.rgb*.7%2B.2%29*vec3%281.%2C.9%2C.7%29%2C%5Cn%5Ct%5Cttexture2D%28tex1%2Cp%29.a*.15%29%3B%5Cn%5Ctgl_FragColor%20%3D%20vec4%28diffuse%2C1%29%3B%5Cn%7D%22%2C%22size%22%3A%5B%2216%22%2C%2216%22%5D%2C%22fps%22%3A%2260%22%7D</string>
+</dict>
+</plist>
