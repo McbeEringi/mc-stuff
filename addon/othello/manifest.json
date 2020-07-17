@@ -1,0 +1,17 @@
+{
+	"format_version": 1,
+	"header": {
+		"description": "mcfunc",
+		"name": "othello",
+		"uuid": "6DEB7AA9-2492-4743-91A5-F753E08403D2",
+		"version": [0, 0, 1],
+		"min_engine_version": [1, 8, 0]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "E99BA64B-0BF0-4EAC-93FB-5BDDAE0723C1",
+			"version": [0, 0, 1]
+		}
+	]
+}
