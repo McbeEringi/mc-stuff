@@ -1,0 +1,12 @@
+{
+	"materials":{
+		"version":"1.0.0",
+		"toko_at_cull:entity":{
+			"+defines":["ALPHA_TEST"]
+		},
+		"toko_win:entity":{
+			"+states":["EnableAlphaToCoverage"],
+			"+defines":["ALPHA_HASHED"]
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+ "format_version":1,
+ "header":{
+ "name":"E209-500 R",
+ "description":"yellow-1",
+ "uuid":"0AB954F3-9C58-4739-B569-22707BD2E4FA",
+ "version":[0,0,1],
+ "min_engine_version":[1,8,0]
+ },
+ "modules":[{
+ "type":"resources",
+ "uuid":"21A22B2B-FA7E-49CA-8632-73B07BB18BA9",
+ "version":[0,0,1]
+ }]
+}
