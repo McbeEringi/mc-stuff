@@ -1,0 +1,16 @@
+{
+	"format_version": 1,
+	"header": {
+		"description": "The \"classic\" look of Minecraft\nby @McbeEringi",
+		"name": "Programmer Art+",
+		"uuid": "D4B2AD63-0D1B-44CA-8EEB-CF30D6690A18",
+		"version": [0, 2, 1]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "56D26315-C7DA-45B2-A470-F9D439622A95",
+			"version": [0, 2, 1]
+		}
+	]
+}
