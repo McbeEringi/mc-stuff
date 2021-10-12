@@ -1,0 +1,7 @@
+to change settings
+go to
+PE: shaders>glsl>config.h
+WIN10: shaders>hlsl>config.fxh
+
+to disable each effects edit "#define ~~" to "//#define ~~"
+advanced settings can not be disabled

@@ -1,0 +1,15 @@
+{
+	"format_version":1,
+	"header":{
+		"description":"ChunkBorder NightVision RSlv Compass SpawnChecker\n§rby@McbeEringi",
+		"name":"UtilityShader num",
+		"uuid":"85568D0B-B4ED-4FA8-B997-B8ECCE29ADDA",
+		"version":[0,0,8],
+		"min_engine_version":[1,8,0]
+	},
+	"modules":[{
+		"type":"resources",
+		"uuid":"C8168587-6D6A-4FEF-B125-B2F15D4C844D",
+		"version":[0,0,8]
+	}]
+}
