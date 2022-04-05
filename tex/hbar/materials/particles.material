@@ -1,7 +1,7 @@
 {
 	"materials": {
 		"version": "1.0.0",
-		"toko:particles_alpha": {
+		"toko:particles_blend": {
 			"depthFunc":"Always"//"depthBias":50000,"depthBiasOGL":50000
 			}
 		}
