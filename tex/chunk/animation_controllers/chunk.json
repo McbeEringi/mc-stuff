@@ -1,0 +1,17 @@
+{
+	"format_version":"1.10.0",
+	"animation_controllers":{
+		"controller.animation.chunk":{
+			"initial_state":"default",
+			"states":{
+				"default":{
+					"transitions":[{"show_chunk":"q.is_sneaking"}]
+				},
+				"show_chunk":{
+					"particle_effects":[{"effect":"chunk"}],
+					"transitions":[{"default":"!q.is_sneaking"}]
+				}
+			}
+		}
+	}
+}

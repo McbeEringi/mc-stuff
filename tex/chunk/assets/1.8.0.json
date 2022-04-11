@@ -1,0 +1,9 @@
+{
+	"minecraft:client_entity":{
+		"description":{
+			"animations":{"chunk":""},
+			"animation_controllers":[{"chunk":"controller.animation.chunk"}],
+			"particle_effects":{"chunk":"toko:chunk"}
+		}
+	}
+}
