@@ -2,15 +2,10 @@
 	"format_version":"1.10.0",
 	"animation_controllers":{
 		"controller.animation.chunk":{
-			"initial_state":"default",
+			"initial_state":"0",
 			"states":{
-				"default":{
-					"transitions":[{"show_chunk":"q.is_sneaking"}]
-				},
-				"show_chunk":{
-					"particle_effects":[{"effect":"chunk"}],
-					"transitions":[{"default":"!q.is_sneaking"}]
-				}
+				"0":{"transitions":[{"1":" q.is_moving"}],"particle_effects":[{"effect":"chunk"}]},
+				"1":{"transitions":[{"0":"!q.is_moving"}],"particle_effects":[{"effect":"chunk"}]}
 			}
 		}
 	}
