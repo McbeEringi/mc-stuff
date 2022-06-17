@@ -1,0 +1,20 @@
+{
+	"item":{"type":"custom","renderer":"inventory_item_renderer","size":[16,16]},
+	"hud_content":{
+		"modifications":[{
+			"array_name":"controls","operation":"insert_front",
+			"value":[
+				{"item":{
+					"type":"stack_panel","anchor_from":"top_right","anchor_to":"top_right","orientation":"horizontal","size":[48,16],
+					"controls":[
+						//https://lukaspah.github.io/item_aux_calculator/
+						{"recover@hud.item":{"property_bag":{"#item_id_aux":42336256}}},
+						{"compass@hud.item":{"property_bag":{"#item_id_aux":22609920}}},
+						{"clock@hud.item":{"property_bag":{"#item_id_aux":22740992}}}
+					],
+					"bindings":[{"binding_name":"#hud_visible","binding_name_override":"#visible","binding_type":"global"}]
+				}}
+			]
+		}]
+	}
+}

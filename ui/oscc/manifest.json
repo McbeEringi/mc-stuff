@@ -1,0 +1,15 @@
+{
+ "format_version":2,
+ "header":{
+ "name":"oscc",
+ "description":"onscreen compass & clock",
+ "uuid":"EAA018ED-7F1F-460D-A863-012271560849",
+ "version":[0,0,2],
+ "min_engine_version":[1,16,100]
+ },
+ "modules":[{
+ "type":"resources",
+ "uuid":"BB3EE88C-7A19-4296-8FB5-EB6D5C027307",
+ "version":[0,0,2]
+ }]
+}
