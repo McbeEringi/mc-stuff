@@ -1,0 +1,13 @@
+{
+	"format_version": "1.10",
+	"minecraft:item": {
+		"description": {
+			"identifier": "toko:toko_material"
+		},
+		"components": {
+			"minecraft:hand_equipped": false,
+			"minecraft:stacked_by_data": false,
+			"minecraft:foil": true
+		}
+	}
+}

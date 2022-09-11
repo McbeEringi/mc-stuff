@@ -1,0 +1,10 @@
+{
+	"format_version": "1.10",
+	"minecraft:item": {
+		"description": {"identifier": "toko:toko_spark"},
+		"components": {
+			"minecraft:hand_equipped": true,
+			"minecraft:stacked_by_data": false
+		}
+	}
+}

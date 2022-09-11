@@ -1,0 +1,15 @@
+{
+	"texture_data":	{
+		"spawn_toko":	{
+			"textures":	[
+				"textures/items/toko_egg",
+				"textures/items/Jtoko_egg",
+				"textures/items/sparker_egg"
+			]
+		},
+		"toko_material":	{"textures":"textures/items/toko_material"},
+		"Jtoko_material":	{"textures":"textures/items/Jtoko_material"},
+		"spark":	{"textures":"textures/items/sp"},
+		"Jspark":	{"textures":"textures/items/j_sp"}
+	}
+}

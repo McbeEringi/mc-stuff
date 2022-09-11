@@ -1,0 +1,18 @@
+{
+	"format_version": "1.10.0",
+	"render_controllers": {
+		"controller.render.spark": {
+			"arrays": {
+				"textures": {
+					"Array.variants": [
+						"Texture.def",
+						"Texture.j"
+					]
+				}
+			},
+			"geometry": "Geometry.default",
+			"materials": [ { "*": "Material.default" } ],
+			"textures": [ "Array.variants[query.variant]" ]
+		}
+	}
+}

@@ -1,0 +1,14 @@
+item.spawn_egg.entity.toko:toko.name=tokotokonatuのスポーンエッグ
+item.toko:toko_material.name=tokotokonatuの素
+entity.toko:toko.name=tokotokonatu
+
+item.spawn_egg.entity.toko:j_toko.name=J鯖tokotokonatuのスポーンエッグ
+item.toko:j_toko_material.name=J鯖tokotokonatuの素
+entity.toko:j_toko.name=J鯖tokotokonatu
+
+item.spawn_egg.entity.toko:spark.name=sparkのスポーンエッグ
+item.toko:toko_spark.name=sparkの素
+entity.toko:spark.name=spark
+
+item.spawn_egg.entity.toko:sparker.name=sparkerのスポーンエッグ
+entity.toko:sparker.name=sparker

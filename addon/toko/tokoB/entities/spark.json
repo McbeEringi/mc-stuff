@@ -1,0 +1,121 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "toko:spark",
+			"runtime_identifier": "shulker_bullet",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+
+		"component_groups": {
+			"toko:0_sp": {
+				"minecraft:variant":{"value": 0}
+			},
+			"toko:1_sp": {
+				"minecraft:variant":{"value": 1}
+			},
+			"toko:d": {
+				"minecraft:addrider": {
+					"entity_type": "toko:spark"
+				},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": ["spark"],
+					"seats": {"position": [ 0.0, 3.0, 0.0 ]}
+				}
+			},
+			"toko:jd": {
+				"minecraft:addrider": {
+					"entity_type": "toko:spark",
+					"spawn_event": "j"
+				},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": ["spark"],
+					"seats": {"position": [ 0.0, 3.0, 0.0 ]}
+				}
+			},
+			"toko:ef":{
+				"minecraft:projectile": {
+					"onHit": {
+						"spawn_aoe_cloud": {
+	            "radius": 6.0,
+	            "radius_on_use": 0,
+	            "potion": 24,
+							"particle": "dragonbreath",
+	            "duration": 60,
+	            "affect_owner": false
+	          },
+						"remove_on_hit": {}
+					},
+					"hitSound": "bullet.hit",
+					"destroyOnHurt": false,
+					"reflectOnHurt": true,
+					"critParticleOnHurt": true,
+					"power": 1,
+					"gravity": 0.01,
+					"uncertaintyBase": 1,
+					"uncertaintyMultiplier": 0,
+					"anchor": 1,
+					"offset": [ 0, -0.1, 0 ]
+				}
+			}
+		},
+
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 0.5
+			},
+			"minecraft:scale": {
+				"value": 0.5
+			},
+			"minecraft:type_family": {
+				"family": [ "spark" ]
+			},
+			"minecraft:projectile": {
+				"onHit": {
+					"impact_damage": {
+						"damage": 8,
+						"knockback": true
+					},
+					"mob_effect": {
+						"effect": "levitation",
+						"durationeasy": 100,
+						"durationnormal": 100,
+						"durationhard": 100,
+						"amplifier": 1
+					},
+					"remove_on_hit": {
+					}
+				},
+				"hitSound": "bullet.hit",
+				"destroyOnHurt": false,
+				"reflectOnHurt": true,
+				"critParticleOnHurt": true,
+				"power": 1,
+				"gravity": 0.01,
+				"uncertaintyBase": 1,
+				"uncertaintyMultiplier": 0,
+				"anchor": 1,
+				"offset": [ 0, -0.1, 0 ]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+
+		"events": {
+			"minecraft:entity_spawned": {"add": {"component_groups": ["toko:0_sp"]}},
+			"j": {"add": {"component_groups": ["toko:1_sp"]}},
+			"d": {"add": {"component_groups": ["toko:0_sp","toko:d"]}},
+			"jd": {"add": {"component_groups": ["toko:1_sp","toko:jd"]}},
+			"ef": {"add": {"component_groups": ["toko:0_sp","toko:ef"]}},
+			"jef": {"add": {"component_groups": ["toko:1_sp","toko:ef"]}}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.toko_spark": {
+			"states": {
+				"default": {
+					"transitions": [{"spark": "query.variant==1 && query.item_remaining_use_duration>0"}],
+					"on_entry": ["/summon toko:sparker"]
+				},
+				"spark": {
+					"transitions": [{"default": "query.item_remaining_use_duration==0"}],
+					"on_entry": [""]
+				}
+			}
+		}
+	}
+}

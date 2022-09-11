@@ -1,0 +1,17 @@
+{
+	"format_version": 1,
+	"header": {
+		"description": "@McbeEringi",
+		"name": "void",
+		"uuid": "84E8E81F-0319-4958-B665-52AC35EABE9C",
+		"version": [0, 0, 1],
+		"min_engine_version": [1, 8, 0]
+	},
+	"modules": [
+		{
+			"type": "world_template",
+			"uuid": "419CBACD-1C52-45DA-9503-30AB8C2BF6DC",
+			"version": [0, 0, 1]
+		}
+	]
+}

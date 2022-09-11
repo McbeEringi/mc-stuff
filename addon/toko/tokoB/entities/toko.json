@@ -1,0 +1,375 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "toko:toko",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+
+		"component_groups": {
+			"toko:baby": {
+				"minecraft:type_family": {
+					"family": [ "irongolem", "toko", "toko_baby" ]
+				},
+				"minecraft:behavior.follow_parent":{
+					"priority": 2
+				},
+				"minecraft:is_baby": {},
+				"minecraft:scale": {
+					"value": 0.5
+				},
+				"minecraft:behavior.find_mount": {
+					"priority": 10,
+					"within_radius": 16,
+					"avoid_water": true,
+					"mount_distance": 2.0
+				},
+				"minecraft:ageable": {
+					"duration": 1200,
+					"feedItems": [ "redstone","repeating_command_block" ],
+					"grow_up": {
+						"event": "minecraft:ageable_grow_up",
+						"target": "self"
+					}
+				}
+			},
+			"toko:adult": {
+				"minecraft:type_family": {
+					"family": [ "irongolem", "toko" ]
+				},
+				"minecraft:loot": {
+					"table": "loot_tables/empty.json"
+				},
+				"minecraft:scale": {
+					"value": 1
+				},
+				"minecraft:rideable": {
+					"seat_count": 1,
+					"family_types": ["toko_baby"],
+					"seats": {"position": [ 0.0, 1.3, -0.35 ],"lock_rider_rotation": 60}
+				}
+			},
+
+			"toko:wild": {
+				"minecraft:trusting": {
+					"probability": 0.33,
+					"trust_items": [ "redstone","repeating_command_block" ],
+					"trust_event": {
+						"event": "minecraft:on_trust",
+						"target": "self"
+					}
+				},
+				"minecraft:behavior.tempt": {
+					"priority": 4,
+					"speed_multiplier": 0.5,
+					"within_radius": 16,
+					"can_get_scared": true,
+					"items": ["redstone","repeating_command_block"]
+				},
+				"minecraft:behavior.avoid_mob_type": {
+					"priority": 5,
+					"entity_types": [
+						{
+							"filters": {"test": "is_family", "subject": "other", "value": "player"},
+							"max_dist": 10,
+							"walk_speed_multiplier": 0.8,
+							"sprint_speed_multiplier": 1.33
+						}
+					]
+				}
+			},
+			"toko:trusting": {
+				"minecraft:inventory": {
+					"container_type": "minecart_chest",
+					"inventory_size": 27
+				},
+				"minecraft:item_hopper":{},
+				"minecraft:behavior.tempt": {
+					"priority": 4,
+					"speed_multiplier": 1.1,
+					"within_radius": 16,
+					"items": ["redstone","repeating_command_block"]
+				}
+			},
+
+			"toko:angry": {
+				"minecraft:angry": {
+					"duration": 25,
+					"broadcastAnger": true,
+					"broadcastRange": 16,
+					"broadcast_filters": { "test": "is_family", "value": "toko" },
+					"calm_event": { "event": "minecraft:on_calm", "target": "self" }
+				},
+				"minecraft:target_nearby_sensor": {
+					"inside_range": 3.0,
+					"outside_range": 4.0,
+					"on_inside_range": {
+						"event": "toko_melee",
+						"target": "self"
+					},
+					"on_outside_range": {
+						"event": "toko_ranged",
+						"target": "self"
+					}
+				},
+				"minecraft:environment_sensor": {
+					"triggers": {
+						"filters": { "test" : "in_water", "value" : true },
+						"event": "toko_ranged"
+					}
+				},
+				"minecraft:damage_sensor": {"triggers": {"cause": "fall","deals_damage": false}}
+			},
+			"toko:ranged": {
+				"minecraft:shooter": {
+					"def": "toko:spark"
+				},
+				"minecraft:behavior.ranged_attack": {
+					"priority": 1,
+					"attack_interval_min": 1,
+					"attack_interval_max": 3,
+					"charge_charged_trigger": 0.0,
+					"charge_shoot_trigger": 0.5,
+					"attack_radius": 16,
+					"burst_shots": 3,
+					"burst_interval": 0.3
+				}
+			},
+			"toko:melee": {
+				"minecraft:behavior.melee_attack": {
+					"priority": 10,
+					"speed_multiplier": 1,
+					"reach_multiplier": 3
+				},
+				"minecraft:behavior.summon_entity": {
+					"priority": 1,
+					"summon_choices": [
+						{
+							"weight": 3,
+							"cooldown_time": 2.0,
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.0,
+									"num_entities_spawned": 1,
+									"entity_type": "toko:spark<ef>",
+									"size": 2.5
+								}
+							]
+						},
+						{
+							"weight": 3,
+							"cooldown_time": 2.0,
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.0,
+									"delay_per_summon": 0.05,
+									"num_entities_spawned": 8,
+									"entity_type": "toko:spark<d>",
+									"size": 2.5
+								}
+							]
+						},
+						{
+							"weight": 2,
+							"cooldown_time": 5.0,
+							"sequence": [
+								{
+									"shape": "circle",
+									"target": "self",
+									"base_delay": 0.0,
+									"num_entities_spawned": 1,
+									"entity_type": "toko:sparker",
+									"size": 1.0,
+									"entity_lifespan": 10
+								}
+							]
+						}
+					]
+				}
+			},
+			"toko:calm": {
+				"minecraft:behavior.panic": {
+					"priority": 1,
+					"speed_multiplier": 1.25
+				},
+				"minecraft:behavior.ocelotattack": {
+					"priority": 4,
+					"walk_speed_multiplier": 0.8,
+					"sprint_speed_multiplier": 1.33,
+					"sneak_speed_multiplier": 0.6
+				}
+			}
+		},
+
+		"components": {
+			"minecraft:health": {
+				"value": 20,
+				"max": 20
+			},
+			"minecraft:attack": {
+				"value": 6,
+				"effect_name": "levitation",
+				"effect_duration": 5
+			},
+			"minecraft:nameable": {
+			},
+			"minecraft:breathable": {
+				"totalSupply": 15,
+				"suffocateTime": 0
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.8
+			},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"can_path_over_water": true,
+				"avoid_water": true,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:equipment": {
+				"table": "loot_tables/toko_equipment.json",
+				"slot_drop_chance": [
+					{
+						"slot": "slot.armor.chest",
+						"drop_chance": 1.0
+					}
+				]
+			},
+			"minecraft:healable": {
+				"items": [
+					{"item": "redstone","heal_amount": 2},
+					{"item": "repeating_command_block","heal_amount": 20}
+				]
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:behavior.float": {},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 0,
+				"entity_types": {
+					"filters":{
+						"all_of": [
+							{"test": "is_family","subject": "other","operator": "!=","value": "player"},
+							{"test": "is_family","subject": "other","operator": "!=","value": "toko"}
+						]
+					}
+				}
+			},
+			"minecraft:damage_sensor": {
+				"priority": 0,
+				"triggers": {
+					"on_damage": {
+						"filters": {
+							"all_of": [
+								{"test": "is_family","subject": "other","operator": "!=","value": "player"},
+								{"test": "is_family","subject": "other","operator": "!=","value": "toko"}
+							]
+						}
+					},
+					"event": "minecraft:become_angry"
+				}
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 1,
+				"attack_interval": 10,
+				"reselect_targets": true,
+				"must_see": true,
+				"entity_types": [
+					{
+						"filters": {
+								"all_of": [
+									{ "test" :	"is_family", "subject" : "other", "value" :	"monster"},
+									{ "test" :	"is_family", "subject" : "other", "operator": "!=", "value" :	"creeper"},
+									{ "test" :	"in_water", "subject" : "other", "value" :	false}
+								]
+						},
+						"max_dist": 16
+					}
+				]
+			},
+			"minecraft:behavior.mount_pathing": {
+				"priority": 1,
+				"speed_multiplier": 1.25,
+				"target_dist": 0,
+				"track_target": true
+			},
+			"minecraft:behavior.leap_at_target": {
+				"priority": 3,
+				"target_dist": 0.3
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 8,
+				"speed_multiplier": 0.8
+			},
+			"minecraft:behavior.look_at_player": {"priority": 9},
+			"minecraft:behavior.random_look_around": {"priority": 10},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+
+		"events": {
+			"minecraft:entity_spawned": {
+				"sequence": [
+					{
+						"randomize": [
+							{
+								"weight": 4,
+								"remove": {},
+								"add": {"component_groups": ["toko:adult","toko:wild","toko:calm"]}
+							},
+							{
+								"weight": 1,
+								"remove": {},
+								"add": {"component_groups": ["toko:baby","toko:wild","toko:calm"]}
+							}
+						]
+					}
+				]
+			},
+			"minecraft:ageable_grow_up": {
+				"remove": {"component_groups": ["toko:baby"]},
+				"add": {"component_groups": ["toko:adult"]}
+			},
+			"minecraft:on_trust": {
+					"remove": {"component_groups": ["toko:wild"]},
+					"add": {"component_groups": ["toko:trusting"]}
+			},
+			"minecraft:become_angry": {
+				"remove": {"component_groups": ["toko:calm"]},
+				"add": {"component_groups": ["toko:angry","toko:ranged"]}
+			},
+			"minecraft:on_calm": {
+				"remove": {"component_groups": ["toko:angry","toko:ranged","toko_melee"]},
+				"add": {"component_groups": ["toko:calm"]}
+			},
+			"toko_melee": {
+				"remove": {"component_groups": ["toko:ranged"]},
+				"add": {"component_groups": ["toko:melee"]}
+			},
+			"toko_ranged": {
+				"remove": {"component_groups": ["toko:melee"]},
+				"add": {"component_groups": ["toko:ranged"]}
+			},
+			"adult": {
+				"add": {"component_groups": ["toko:adult","toko:wild","toko:calm"]}
+			},
+			"baby": {
+				"add": {"component_groups": ["toko:baby","toko:wild","toko:calm"]}
+			}
+		}
+	}
+}

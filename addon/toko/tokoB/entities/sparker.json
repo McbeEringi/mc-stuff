@@ -1,0 +1,123 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "toko:sparker",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+
+		"component_groups": {
+			"toko:0_sp": {
+				"minecraft:variant":{"value": 0},
+				"minecraft:shooter": {"def": "toko:spark"}
+			},
+			"toko:1_sp": {
+				"minecraft:variant":{"value": 1},
+				"minecraft:shooter": {"def": "toko:spark<j>"}
+			},
+			"toko:tm": {
+				"minecraft:timer": {
+					"time": [60,90],
+					"time_down_event": {"event": "desp", "target": "self"}
+				}
+			},
+			"toko:desp": {"minecraft:type_family": {"family": ["desp"]}}
+		},
+
+		"components": {
+			"minecraft:health": {
+				"value": 2,
+				"max": 2
+			},
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 0.5
+			},
+			"minecraft:scale": {
+				"value": 1.0
+			},
+			"minecraft:type_family": {
+				"family": [ "toko", "spark" ]
+			},
+			"minecraft:behavior.vex_copy_owner_target": {},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 1,
+				"reselect_targets": true,
+				"must_see": true,
+				"entity_types": [
+					{
+						"filters": {
+								"all_of": [
+									{ "test" :	"is_family", "subject" : "other", "value" :	"monster"},
+									{ "test" :	"is_family", "subject" : "other", "operator": "!=", "value" :	"creeper"},
+									{ "test" :	"in_water", "subject" : "other", "value" :	false}
+								]
+						},
+						"max_dist": 16
+					}
+				]
+			},
+			"minecraft:behavior.ranged_attack": {
+				"priority": 1,
+				"attack_interval_min": 1,
+				"attack_interval_max": 3,
+				"charge_charged_trigger": 0.0,
+				"charge_shoot_trigger": 0.5,
+				"attack_radius": 16,
+				"burst_shots": 3,
+				"burst_interval": 0.3
+			},
+			"minecraft:behavior.leap_at_target": {
+				"priority": 3,
+				"target_dist": 0.3
+			},
+			"minecraft:ambient_sound_interval": {},
+			"minecraft:despawn": {
+				"filters": { "test": "is_family", "subject": "self", "value": "desp" }
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1,
+				"entity_types": {
+					"filters":{
+						"all_of": [
+							{"test": "is_family","subject": "other","operator": "!=","value": "player"},
+							{"test": "is_family","subject": "other","operator": "!=","value": "toko"}
+						]
+					}
+				}
+			},
+			//ghast
+			"minecraft:movement": {"value": 0.01},
+			"minecraft:navigation.float": {
+				"can_path_over_water": true
+			},
+			"minecraft:behavior.float_wander": {
+				"priority": 2,
+				"must_reach": true
+			},
+			"minecraft:can_fly": {},
+			"minecraft:loot": {"table": "loot_tables/sparker_drop.json"},
+			"minecraft:fall_damage": {"value": 0.0},
+			"minecraft:jump.static": {},
+			"minecraft:behavior.float": {"priority": 0},
+			"minecraft:follow_range": {
+				"value": 24,
+				"max": 24
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+
+		"events": {
+			"minecraft:entity_spawned": {"add": {"component_groups": ["toko:0_sp","toko:tm"]}},
+			"j": {"add": {"component_groups": ["toko:1_sp","toko_tm"]}},
+			"desp": {"add": {"component_groups": ["toko:desp"]}}
+			}
+		}
+	}
+}

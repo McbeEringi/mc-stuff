@@ -1,0 +1,34 @@
+{
+	"entity_sounds": {
+		"entities": {
+			"toko:toko": {
+				"volume": 1.0,
+				"pitch": [ 0.8, 1.2 ],
+				"events": {
+					"shoot": "mob.witch.throw",
+					"ambient": ""
+				}
+			},
+			"toko:j_toko": {
+				"volume": 1.0,
+				"pitch": [ 0.8, 1.2 ],
+				"events": {
+					"shoot": "mob.witch.throw",
+					"ambient": ""
+				}
+			},
+			"toko:sparker": {
+				"volume": 1.0,
+				"pitch": 1.0,
+				"events": {
+					"fall.big": "",
+					"fall.small": "",
+					"ambient": {"sound": "beacon.ambient", "volume": 1.0, "pitch": 1.2},
+					"hurt": {"sound": "block.lantern.place", "volume": 1.0, "pitch": 1.1},
+					"shoot": "mob.witch.throw",
+					"death": "mob.shulker.bullet.hit"
+				}
+			}
+		}
+	}
+}

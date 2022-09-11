@@ -1,0 +1,17 @@
+{
+	"format_version": 2,
+	"header": {
+		"description": "McbeEringi",
+		"name": "toko",
+		"uuid": "97B11D13-E582-4AD9-B227-1CEC6D66E9A1",
+		"version": [0, 0, 5],
+		"min_engine_version": [1, 13, 0]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "FF529D8E-C8FF-4129-B157-DBEAA4E16DC4",
+			"version": [0, 0, 5]
+		}
+	]
+}

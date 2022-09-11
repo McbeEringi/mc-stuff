@@ -1,0 +1,13 @@
+{
+	"format_version":	"1.10",
+	"minecraft:item":	{
+		"description":	{
+			"identifier":	"toko:j_toko_material",
+			"category":	"Nature"
+		},
+		"components":	{
+			"minecraft:icon":	"Jtoko_material",
+			"minecraft:render_offsets":	"apple"
+		}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "toko:spark",
+			"materials": {"default": "shulker_bullet"},
+			"textures": {
+				"def": "textures/stuff/spark0",
+				"j": "textures/stuff/spark1"
+			},
+			"geometry": {"default": "geometry.shulker_bullet"},
+			"animations": {"move": "animation.shulker_bullet.move"},
+			"scripts": {"animate": ["move"]},
+			"particle_effects": {"test": "minecraft:endrod"},
+			"render_controllers": [ "controller.render.spark" ],
+			"spawn_egg": {"texture": "spark"}
+		}
+	}
+}

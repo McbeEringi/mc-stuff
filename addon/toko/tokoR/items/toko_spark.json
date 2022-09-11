@@ -1,0 +1,13 @@
+{
+	"format_version":	"1.10",
+	"minecraft:item":	{
+		"description":	{
+			"identifier":	"toko:toko_spark",
+			"category":	"Nature"
+		},
+		"components":	{
+			"minecraft:icon":	"spark",
+			"minecraft:render_offsets":	"apple"
+		}
+	}
+}

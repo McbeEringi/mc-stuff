@@ -1,0 +1,21 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shapeless": {
+		"description": {
+		"identifier": "toko:toko_spark"
+		},
+
+		"tags": [ "crafting_table" ],
+		"ingredients": [
+			{
+				"item": "minecraft:snowball"
+			},
+			{
+				"item": "minecraft:feather"
+			}
+		],
+		"result": {
+			"item": "toko:toko_spark"
+		}
+	}
+}
