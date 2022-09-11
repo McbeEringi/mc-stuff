@@ -1,0 +1,104 @@
+{
+  "namespace": "start",
+  "main_buttons_panel": {
+    "type": "panel",
+    "size": [ 150, "100%c" ],
+    "controls": [
+      {
+        "stacked_rows": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "controls": [
+            {
+              "stacked_row_0@start.stacked_row": {
+                "controls": [
+                  { "play_button@start.play_button": {} }
+                ]
+              }
+            },
+            {
+              "stacked_row_1@start.stacked_row": {
+                "ignored": "$achievements_ignored",
+                "controls": [
+                  { "achievements_button@start.achievements_button": {} }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#achievements_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "stacked_row_2@start.stacked_row": {
+                "controls": [
+                  {
+                    "stacked_columns": {
+                      "type": "stack_panel",
+                      "size": [ "100%", "100%" ],
+                      "orientation": "horizontal",
+                      "controls": [
+                        {
+                          "stacked_col_0": {
+                            "type": "panel",
+                            "size": [ "fill", "100%" ],
+                            "controls": [
+                              { "settings_button@start.settings_button": {} }
+                            ]
+                          }
+                        },
+                        {
+                          "stacked_col_1": {
+                            "type": "panel",
+                            "size": [ "fill", "100%" ],
+                            "ignored": "($store_ignored)",
+                            "controls": [
+                              {
+                                "store_button@start.store_button": {
+                                  "enabled": "(not $store_disabled)"
+                                }
+                              },
+                              {
+                                "update_icon@start.update_prompt_icon": {
+                                  "size": [ "52.38%y", 15 ],
+                                  "offset": [ -16, -6 ],
+                                  "bindings": [
+                                    {
+                                      "binding_name": "#update_icon_visible",
+                                      "binding_name_override": "#visible",
+                                      "binding_condition": "always"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "new_offers_icon@start.new_offers_icon": {
+                                  "offset": [ 8, -6 ],
+                                  "anchor_from": "top_right",
+                                  "anchor_to": "top_right",
+                                  "bindings": [
+                                    {
+                                      "binding_name": "#new_offers",
+                                      "binding_name_override": "#visible"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

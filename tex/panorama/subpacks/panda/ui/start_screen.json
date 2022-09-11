@@ -1,0 +1,300 @@
+{
+  "tag": {
+    "type": "image",
+    "texture": "$tag_texture",
+	"$rp_new_color": [ 1, 1, 1 ],
+    "controls": [
+      {
+        "new_offer_label": {
+          "type": "label",
+          "size": [ "default", 10 ],
+          "offset": [ 3, -4 ],
+          "text": "$tag_text",
+          "color": "$rp_new_color",
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "layer": 1
+        }
+      }
+    ]
+  },
+  
+  "new_offers_icon@start.tag": {
+    "size": [ "100%c + 26px", 41 ],
+	"min_size": [ 44, 41 ],
+    "layer": 11, // This is the lowest layer where the button border won't show through this icon while being pressed
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+	"$tag_text": "store.new.icon",
+	"$tag_texture": "textures/ui/newPandaIcon"
+  },
+  
+  "store_button_sale_banner@start.sale_ribbon_icon": {
+    "size": [ "100%c", 21 ], // For some reason doing 100%c + X doesn't work on an image?
+    "controls": [
+      {
+        "banner_label_padding": {
+          "type": "panel",
+          "size": [ "100%c + 10px", "100%" ],
+		  "$sale_text_color": [ 0, 0, 0 ],
+          "controls": [
+            {
+              "banner_label": {
+                "type": "label",
+                "size": [ "default", 10 ],
+                "offset": [ 0, 5 ],
+                "text": "store.startScreen.deals",
+                "color": "$sale_text_color",
+                "layer": 1
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "store_button_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "button_label@common_buttons.new_ui_binding_button_label": {
+          "layer": 5
+        }
+      },
+      {
+        "sales_banner@start.store_button_sale_banner": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ -18, -13 ],
+          "bindings": [
+            {
+              "binding_name": "#sale_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "main_buttons_panel": {
+    "type": "panel",
+    "size": "$main_panel_size",
+    "variables": [
+      {
+        "requires": "$education_edition",
+        "$main_panel_size": [ 175, "100%c" ]
+      },
+      {
+        "requires": "(not $education_edition)",
+        "$main_panel_size": [ 150, "100%c" ]
+      }
+    ],
+    "controls": [
+      {
+        "stacked_rows": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "controls": [
+            {
+              "stacked_row_0@start.stacked_row": {
+                "controls": [
+                  { "play_button@start.play_button": {} }
+                ]
+              }
+            },
+            {
+              "stacked_row_1@start.stacked_row": {
+                "ignored": "$achievements_ignored",
+                "controls": [
+                  { "achievements_button@start.achievements_button": {} }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#achievements_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "stacked_row_2@start.stacked_row": {
+                "ignored": "(not $trial)",
+                "controls": [
+                  {
+                    "stacked_columns": {
+                      "type": "stack_panel",
+                      "size": [ "100%", "100%" ],
+                      "orientation": "horizontal",
+                      "controls": [
+                        {
+                          "stacked_col_0": {
+                            "type": "panel",
+                            "size": [ "fill", "100%" ],
+                            "controls": [
+                              { "settings_button@start.settings_button": {} }
+                            ]
+                          }
+                        },
+                        {
+                          "stacked_col_1": {
+                            "type": "panel",
+                            "size": [ "fill", "100%" ],
+                            "ignored": "($store_ignored)",
+                            "controls": [
+                              {
+                                "store_button@start.store_button": {
+                                  "enabled": "(not $store_disabled)"
+                                }
+                              },
+                              {
+                                "update_icon@start.update_prompt_icon": {
+                                  "size": [ "52.38%y", 15 ],
+                                  "offset": [ -16, -6 ],
+                                  "bindings": [
+                                    {
+                                      "binding_name": "#update_icon_visible",
+                                      "binding_name_override": "#visible",
+                                      "binding_condition": "always"
+                                    }
+                                  ]
+                                }
+                              },
+                              {
+                                "new_offers_icon@start.new_offers_icon": {
+                                  "offset": [ 24, -26 ],
+                                  "anchor_from": "top_right",
+                                  "anchor_to": "top_right",
+                                  "bindings": [
+                                    {
+                                      "binding_name": "#new_offers",
+                                      "binding_name_override": "#visible"
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "settings@start.stacked_row": {
+                "ignored": "$trial",
+                "controls": [
+                  { "settings_button@start.settings_button": {} }
+                ]
+              }
+            },
+            {
+              "library@start.stacked_row": {
+                "ignored": "(not $education_edition)",
+                "controls": [
+                  { "library_button@start.library_button": {} },
+                  {
+                    "beta_icon@start.beta_icon": {
+                      "offset": [ 8, -6 ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "quick_play_educator_resources@start.stacked_row": {
+                "ignored": "(not $education_edition)",
+                "controls": [
+                  {
+                    "quick_play_button@start.quick_play_button": {
+                      "bindings": [
+                        {
+                          "binding_name": "(not #teacher_content_visible)",
+                          "binding_name_override": "#visible"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "educator_resources_button@start.educator_resources_button": {
+                      "bindings": [
+                        {
+                          "binding_name": "#teacher_content_visible",
+                          "binding_name_override": "#visible"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "store@start.stacked_row": {
+                "ignored": "(($trial) or ($store_ignored))",
+                "controls": [
+                  {
+                    "store_button@start.store_button": {
+                      "enabled": "(not $store_disabled)"
+                    }
+                  },
+                  {
+                    "update_icon@start.update_prompt_icon": {
+                      "size": [ "52.38%y", 15 ],
+                      "offset": [ 0, -26 ],
+                      "bindings": [
+                        {
+                          "binding_name": "#update_icon_visible",
+                          "binding_name_override": "#visible",
+                          "binding_condition": "always"
+                        }
+                      ]
+                    }
+                  },
+                  {
+					"new_icon_panel": {
+					  "type": "panel",
+					  "size": ["100%c", "100%c" ],
+					  "anchor_from": "top_right",
+					  "anchor_to": "top_right",
+					  "controls": [
+					    {
+						  "new_offers_icon@start.new_offers_icon": {
+							"offset": [ 27, -32 ],							
+							"bindings": [
+							  {
+								"binding_name": "#new_offers",
+								"binding_name_override": "#visible"
+							  }
+							]
+						  }
+						}
+					  ]
+					}
+                  }
+                ]
+              }
+            },
+            {
+              "buy_game@start.stacked_row": {
+                "controls": [
+                  { "buy_game_button@start.buy_game_button": {} }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#trial_game_mode",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

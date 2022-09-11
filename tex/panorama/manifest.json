@@ -1,0 +1,51 @@
+{
+   "format_version": 1,
+   "header": {
+      "description": "&someUI",
+      "name": "panoramas",
+      "uuid": "44edfda8-a93c-875c-24cb-dfd91eba3e8e",
+      "version": [0, 0, 6],
+      "min_engine_version": [1, 2, 6]
+   },
+   "modules": [
+      {
+            "type": "resources",
+            "uuid": "26703920-6ccd-4e1c-80b7-cc2d4584f3f0",
+            "version": [0, 0, 6]
+      }
+   ],
+   "subpacks": [
+   {
+      "folder_name": "1.1",
+      "name": "Nostalgia (v1.1)",
+      "memory_tier": 1
+      },
+   {
+      "folder_name": "1.2",
+      "name": "Better Together (v1.2)",
+      "memory_tier": 2
+      },
+   {
+      "folder_name": "1.5",
+      "name": "Aquatic (v1.5)",
+      "memory_tier": 3
+      },
+   {
+      "folder_name": "2018s",
+      "name": "2018 SummerSale",
+      "memory_tier": 4
+      },
+   {
+      "folder_name": "panda",
+      "name": "panda",
+      "memory_tier": 5
+      },
+
+   {
+      "folder_name": "mitaka",
+      "name": "mitaka",
+      "memory_tier": 6
+      }
+
+   ]
+}
