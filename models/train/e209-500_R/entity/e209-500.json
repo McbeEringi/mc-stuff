@@ -1,0 +1,17 @@
+{
+	"format_version":"1.8.0",
+	"minecraft:client_entity":{
+		"description":{
+			"identifier":"toko:e209-500",
+			"materials":{
+				"default":"toko_at_cull",
+				"nocull":"entity_alphatest",
+				"window":"toko_win"
+			},
+			"textures":{"default":"textures/tex"},
+			"geometry":{"default":"geometry.toko.e209-500_s"},
+			"render_controllers":["controller.render.e209-500"],
+			"spawn_egg":{"texture":"toko_spawn","texture_index":0}
+		}
+	}
+}

@@ -1,0 +1,6 @@
+# Blender MTL File: 'e209-500.blend'
+# Material Count: 1
+
+newmtl Material
+map_Kd tex.png
+map_d tex.png
