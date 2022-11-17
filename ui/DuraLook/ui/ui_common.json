@@ -4,7 +4,7 @@
 		{"dnum@common.dnum":{"layer":8}}
 	]}]},
 	"dtpl":{
-		"type":"label","anchor_from":"top_middle","anchor_to":"top_middle","text":"$txt","font_type":"MinecraftTen","alpha":0.75,
+		"type":"label","anchor_from":"top_middle","anchor_to":"top_middle","text":"$txt","font_type":"MinecraftTen","alpha":0.7,"shadow":true,
 		"bindings":[
 			{"binding_name":"#item_durability_current_amount","binding_name_override":"#dc","binding_type":"collection","binding_collection_name":"$item_collection_name"},
 			{"binding_type":"view","source_property_name":"(($lb<#dc)and(#dc<$ub))","target_property_name":"#visible"}
