@@ -1,13 +1,13 @@
 {
 	"format_version":1,
 	"header":{
-		"version":[0,0,6],
-		"description":"skins",
-		"name":"eringi",
+		"version":[0,0,7],
+		"description":"McbeEringi's skins",
+		"name":"mcbeeringi",
 		"uuid":"9b93ad7a-9ee3-11e8-98d0-529269fb1459"
 	},
 	"modules":[{
-	"version":[0,0,6],
+	"version":[0,0,7],
 		"type":"skin_pack",
 		"uuid":"9b93b0a4-9ee3-11e8-98d0-529269fb1459"
 	}]

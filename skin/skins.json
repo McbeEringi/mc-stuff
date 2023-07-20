@@ -1,41 +1,15 @@
 {
-	"localization_name":"eringi",
+	"localization_name":"mcbeeringi",
 	"skins":[
-		{
-			"localization_name":"toko","texture":"toko.png",
-			"geometry":"geometry.humanoid.customSlim","type":"free"
-		},
-		{
-			"localization_name":"tokoS","texture":"tokoS.png",
-			"geometry":"geometry.humanoid.customSlim","type":"free"
-		},
-		{
-			"localization_name":"J1st","texture":"J1st.png",
-			"geometry":"geometry.humanoid.customSlim","type":"free"
-		},
-		{
-			"localization_name":"J1st_sg","texture":"J1st_sg.png",
-			"geometry":"geometry.humanoid.customSlim","type":"free"
-		},
-		{
-			"localization_name":"heavenE","texture":"heavenE.png",
-			"geometry":"geometry.humanoid.customSlim","type":"free"
-		},
-		{
-			"localization_name":"heavenJ","texture":"heavenJ.png",
-			"geometry":"geometry.humanoid.customSlim","type":"free"
-		},
-		{
-			"localization_name":"toko_","texture":"toko_.png",
-			"geometry":"geometry.humanoid.customSlim","type":"free"
-		},
-		{
-			"localization_name":"tokoS_","texture":"tokoS_.png",
-			"geometry":"geometry.humanoid.customSlim","type":"free"
-		},
-		{
-			"localization_name":"villager","texture":"villager.png",
-			"geometry":"geometry.humanoid.customSlim","type":"free"
-		}
+		{"localization_name":"toko","texture":"toko.png","geometry":"geometry.humanoid.customSlim","type":"free"},
+		{"localization_name":"toko_sub","texture":"toko_sub.png","geometry":"geometry.humanoid.customSlim","type":"free"},
+		{"localization_name":"jsvr_1st","texture":"jsvr_1st.png","geometry":"geometry.humanoid.customSlim","type":"free"},
+		{"localization_name":"jsvr_1st_sun","texture":"jsvr_1st_sun.png","geometry":"geometry.humanoid.customSlim","type":"free"},
+		{"localization_name":"jsvr_heaven_o","texture":"jsvr_heaven_o.png","geometry":"geometry.humanoid.customSlim","type":"free"},
+		{"localization_name":"jsvr_heaven_v","texture":"jsvr_heaven_v.png","geometry":"geometry.humanoid.customSlim","type":"free"},
+		{"localization_name":"jsvr_pika","texture":"jsvr_pika.png","geometry":"geometry.humanoid.customSlim","type":"free"},
+		{"localization_name":"toko_legacy","texture":"toko_legacy.png","geometry":"geometry.humanoid.customSlim","type":"free"},
+		{"localization_name":"toko_sub_legacy","texture":"toko_sub_legacy.png","geometry":"geometry.humanoid.customSlim","type":"free"},
+		{"localization_name":"villager","texture":"villager.png","geometry":"geometry.humanoid.customSlim","type":"free"}
 	]
 }
