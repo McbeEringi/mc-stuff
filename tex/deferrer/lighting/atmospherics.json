@@ -1,0 +1,18 @@
+{
+	"horizon_blend_stops":{"min":-0.05,"max":0,"start":0.3,"mie_start":0.5},
+
+	"rayleigh_strength":1.0,
+	"sun_mie_strength":3.0,
+	"moon_mie_strength":3.0,
+	"sun_glare_shape":10.0,
+
+	"sky_zenith_color":{
+		"0.0":"#4c6cb3","0.2":"#4c6cb3","0.8":"#4c6cb3",
+		"0.3":"#0d0015","0.7":"#0d0015"
+	},
+	"sky_horizon_color":{
+		"0.0":"#a0d8ef","0.2":"#a0d8ef","0.8":"#a0d8ef",
+		"0.25":"#ee7800","0.75":"#ee7800",
+		"0.3":"#17184b","0.7":"#17184b"
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"format_version":1,
+	"header":{
+		"name":"Deferrer",
+		"description":"Deferred Lighting test pack\nby @McbeEringi",
+		"uuid":"b58875b8-e11e-46b8-a23b-5269e5deaff0",
+		"version":[0,0,1]
+	},
+	"modules":[{
+		"type":"resources",
+		"uuid":"a2347bc8-26c3-438d-a56e-0e65417db5e2",
+		"version":[0,0,1]
+	}],
+	"capabilities":["pbr"] 
+}
