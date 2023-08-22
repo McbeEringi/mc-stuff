@@ -1,9 +1,0 @@
-{
-	"minecraft:client_entity":{
-		"description":{
-			"animations":{"ore":"controller.animation.ore"},
-			"particle_effects":{"ore":"toko:ore_scan"},
-			"scripts":{"animate":["ore"]}
-		}
-	}
-}
