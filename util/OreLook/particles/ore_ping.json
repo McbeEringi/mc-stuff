@@ -6,24 +6,19 @@
 			"basic_render_parameters":{"material":"particles_alpha","texture":"textures/particle/particles"}
 		},
 		"components":{
-			"minecraft:emitter_rate_instant":{"num_particles":"q.distance_from_camera<32?64:0"},
+			"minecraft:emitter_rate_instant":{"num_particles":"q.distance_from_camera<16?256:0"},
 			"minecraft:emitter_lifetime_once":{"active_time":0.1},
-			"minecraft:emitter_shape_sphere":{"radius":0.5,"surface_only":true,"direction":"outwards"},
+			"minecraft:emitter_shape_sphere":{"radius":8,"direction":"outwards"},
 
-			"minecraft:particle_initial_speed":2,
+			"minecraft:particle_initial_speed":0.5,
 			"minecraft:particle_motion_dynamic":{},
 			"minecraft:particle_appearance_billboard":{
-				"size":[0.1,0.1],"facing_camera_mode":"direction_z",
-				"direction":{"mode":"derive_from_velocity","min_speed_threshold":0.01},
+				"size":[0.01,0.01],"facing_camera_mode":"direction_z",
 				"uv":{"texture_width":128,"texture_height":128,"flipbook":{
-					"base_UV":[56,"v.particle_random_2<.5?0:88"],"size_UV":[8,8],"step_UV":[-8,0],"frame_per_second":8,"max_frame":8,"stretch_to_lifetime":true
+					"base_UV":[56,"v.particle_random_1<.5?0:88"],"size_UV":[8,8],"step_UV":[-8,0],"frame_per_second":8,"max_frame":8,"stretch_to_lifetime":true
 				}}
 			},
-			"minecraft:particle_lifetime_expression":{"max_lifetime":8},
-			"minecraft:particle_lifetime_events":{"expiration_event":"ping"},
-			"minecraft:particle_expire_if_in_blocks":[
-				"minecraft:snow"
-			]
+			"minecraft:particle_lifetime_expression":{"max_lifetime":2}
 		}
 	}
 }
