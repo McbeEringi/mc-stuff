@@ -2,10 +2,10 @@
 	"format_version":"1.10.0",
 	"animation_controllers":{
 		"controller.animation.ore":{
-			"initial_state":"0",
+			"initial_state":"1",
 			"states":{
-				"0":{"transitions":[{"1":"t.x=q.is_item_name_any('slot.weapon.mainhand',0,'minecraft:redstone_torch');t.i=0;loop(9,{!t.x?{t.x=q.is_item_name_any('slot.hotbar',t.i,'minecraft:redstone_torch');};t.i=t.i+1;});return 1;"}]},
-				"1":{"transitions":[{"0":"t.x=q.is_item_name_any('slot.weapon.mainhand',0,'minecraft:redstone_torch');t.i=0;loop(9,{!t.x?{t.x=q.is_item_name_any('slot.hotbar',t.i,'minecraft:redstone_torch');};t.i=t.i+1;});return 0;"}],"particle_effects":[{"effect":"ore"}]}
+				"0":{"transitions":[{"1":"1"}]},
+				"1":{"transitions":[{"0":"!math.mod(q.time_stamp,10)"}],"particle_effects":[{"effect":"ore"}]}
 			}
 		}
 	}
