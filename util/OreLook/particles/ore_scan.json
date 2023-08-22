@@ -6,17 +6,12 @@
 			"basic_render_parameters":{"material":"particles_alpha","texture":"textures/particle/particles"}
 		},
 		"events":{
-      "ping":{
-        "particle_effect":{
-          "effect":"toko:ore_ping",
-          "type":"emitter"
-        }
-      }
-    },
+			"ping":{"particle_effect":{"effect":"toko:ore_ping","type":"emitter"}}
+		},
 		"components":{
-			"minecraft:emitter_rate_steady":{"spawn_rate":256,"max_particles":512},
+			"minecraft:emitter_rate_steady":{"spawn_rate":1024,"max_particles":2048},
 			"minecraft:emitter_lifetime_looping":{"active_time":2},
-			"minecraft:emitter_shape_sphere": {"radius":0.5,"surface_only":true,"direction":"outwards"},
+			"minecraft:emitter_shape_sphere":{"radius":0.5,"surface_only":true,"direction":"outwards"},
 
 			"minecraft:particle_initial_speed":16,
 			"minecraft:particle_motion_dynamic":{"linear_drag_coefficient":"v.particle_age<1?0:-256"},
@@ -24,7 +19,8 @@
 			"minecraft:particle_lifetime_events":{"expiration_event":"ping"},
 			"minecraft:particle_expire_if_in_blocks":[
 				"minecraft:diamond_ore",
-				"minecraft:deepslate_diamond_ore"
+				"minecraft:deepslate_diamond_ore",
+				"minecraft:ancient_debris"
 			]
 		}
 	}
