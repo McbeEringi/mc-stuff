@@ -1,0 +1,15 @@
+{
+ "format_version":1,
+ "header":{
+ "name":"nbdp",
+ "description":"no block_destruct particle",
+ "uuid":"1E32F93C-07CA-4083-92AD-7D1258DCF834",
+ "version":[0,0,1],
+ "min_engine_version":[1,10,0]
+ },
+ "modules":[{
+ "type":"resources",
+ "uuid":"6C6323F2-7AF2-4A8A-97DA-DB06A380D9B4",
+ "version":[0,0,1]
+ }]
+}
