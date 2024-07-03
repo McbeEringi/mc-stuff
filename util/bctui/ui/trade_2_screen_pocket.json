@@ -1,1 +1,4 @@
-{"trade_slots_panel":{"modifications":[{"array_name":"controls","operation":"insert_back","value":[{"all@crafting_pocket.bcbtn":{"$icn":"trade2_result_item","offset":[-2,-2]}}]}]}}
+{"trade_slots_panel":{"modifications":[{"array_name":"controls","operation":"insert_back","value":[{"all@crafting_pocket.bcbtn":{
+	"$icn":"trade2_result_item","offset":[-2,-2],
+	"bindings":[{"binding_name":"#trade_button_enabled","binding_name_override":"#enabled"}]
+}}]}]}}
