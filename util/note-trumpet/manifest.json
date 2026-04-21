@@ -1,0 +1,17 @@
+{
+	"format_version":2,
+	"header":{
+		"name":"note-trumpet",
+		"description":"detuned trumpet patch"
+		"version":[0,0,1],
+		"uuid":"0d5bfb26-e54c-4099-ba13-ca715c27d7fc",
+		"min_engine_version":[1,13,0]
+	},
+	"modules":[
+		{
+			"type":"resources",
+			"version":[0,0,1],
+			"uuid":"aceaa3b5-5e5b-424a-a789-3bad2b7005d1"
+		}
+	]
+}
