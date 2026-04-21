@@ -2,7 +2,7 @@
 	"format_version":2,
 	"header":{
 		"name":"note-trumpet",
-		"description":"detuned trumpet patch"
+		"description":"detuned trumpet patch",
 		"version":[0,0,1],
 		"uuid":"0d5bfb26-e54c-4099-ba13-ca715c27d7fc",
 		"min_engine_version":[1,13,0]
